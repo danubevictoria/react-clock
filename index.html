@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Clock App</title>
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+</head>
+<body>
+  <div id="root">
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js'></script>
+  <!-- React Dom is just for websites -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js'></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <script type="text/babel">
+  //Babel is a transpiler that reads source code in one language and produces equivalent into another language
+    //logic above
+    function tick() {
+      //const will stay constant and not change
+      //this representation goes to the virtual DOM. looks for the differences and updates the virtual DOM
+      const element = (
+        <div>
+          <h1>Hello World!</h1>
+          <h2>It is {new Date().toLocaleTimeString()}.</h2>
+        </div>
+      )
+
+      ReactDOM.render(
+        element,
+        document.getElementById('root')
+      );
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+</html>
